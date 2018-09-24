@@ -1,0 +1,33 @@
+# source: http://localhost:4000/graphql
+# timestamp: Mon Sep 24 2018 12:15:21 GMT+0900 (Japan Standard Time)
+
+schema {
+  query: RootQueryType
+  mutation: Mutation
+}
+
+type Author {
+  id: ID
+  name: String
+  age: Int
+  book: [Book]
+}
+
+type Book {
+  id: ID
+  name: String
+  genra: String
+  author: Author
+}
+
+type Mutation {
+  addAuthor(name: String, age: Int): Author
+  addBook(name: String, genra: String, authorId: ID): Book
+}
+
+type RootQueryType {
+  book(id: ID): Book
+  author(id: ID): Author
+  books: [Book]
+  authors: [Author]
+}

@@ -6,16 +6,21 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-relay": "^1.6.2",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "relay-devtools": "^1.4.0",
+    "watchman": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "schema": "graphql get-schema --project client",
+    "relay": "relay-compiler --watch --client --src --schema ./schema/schema.graphql"
   },
   "devDependencies": {
     "babel-plugin-relay": "^1.6.2",
-    "graphql": "^14.0.2"
+    "graphql": "^14.0.2",
+    "relay-compiler": "^1.6.2"
   }
 }
